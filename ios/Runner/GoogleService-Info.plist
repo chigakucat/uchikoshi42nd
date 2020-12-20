@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1018090440950-n3dgs4o6ns1m82901pclkc59fhgoh448.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1018090440950-n3dgs4o6ns1m82901pclkc59fhgoh448</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCbJS5t7eun1xjDCq9JB9OzBom5jXkOlj8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1018090440950</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.asano.ufoff</string>
+	<key>PROJECT_ID</key>
+	<string>uchikoshifesonline</string>
+	<key>STORAGE_BUCKET</key>
+	<string>uchikoshifesonline.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1018090440950:ios:8ae9f5173d7dc058f484d7</string>
+	<key>DATABASE_URL</key>
+	<string>https://uchikoshifesonline.firebaseio.com</string>
+</dict>
+</plist>

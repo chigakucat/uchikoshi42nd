@@ -1,0 +1,119 @@
+{
+  "project_info": {
+    "project_number": "1018090440950",
+    "firebase_url": "https://uchikoshifesonline.firebaseio.com",
+    "project_id": "uchikoshifesonline",
+    "storage_bucket": "uchikoshifesonline.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018090440950:android:840250a91517dfa9f484d7",
+        "android_client_info": {
+          "package_name": "com.asano.perfect_ufo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018090440950-9ql6lkh0v3cljfq11j9cvh6bv4lluo1u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjHy3QnwKc4iZ--FIBtSAlqk7UAvzAfqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018090440950-9ql6lkh0v3cljfq11j9cvh6bv4lluo1u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1018090440950-n3dgs4o6ns1m82901pclkc59fhgoh448.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.asano.ufoff"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018090440950:android:a21672a276cddf37f484d7",
+        "android_client_info": {
+          "package_name": "com.asano.ufo1247"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018090440950-9ql6lkh0v3cljfq11j9cvh6bv4lluo1u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjHy3QnwKc4iZ--FIBtSAlqk7UAvzAfqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018090440950-9ql6lkh0v3cljfq11j9cvh6bv4lluo1u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1018090440950-n3dgs4o6ns1m82901pclkc59fhgoh448.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.asano.ufoff"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018090440950:android:df83924e8f1a9604f484d7",
+        "android_client_info": {
+          "package_name": "com.asano.ufoff"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018090440950-9ql6lkh0v3cljfq11j9cvh6bv4lluo1u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjHy3QnwKc4iZ--FIBtSAlqk7UAvzAfqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018090440950-9ql6lkh0v3cljfq11j9cvh6bv4lluo1u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1018090440950-n3dgs4o6ns1m82901pclkc59fhgoh448.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.asano.ufoff"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

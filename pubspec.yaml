@@ -1,0 +1,37 @@
+name: ufoff
+description: A new Flutter application.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.0
+  firebase_core: ^0.5.0+1
+  cloud_firestore: ^0.14.1+3
+  panorama: ^0.0.2
+  provider: ^4.3.2+2
+  flutter_pdfview: ^1.0.3+5
+  flutter_youtube: ^2.0.0+1
+  webview_flutter: ^1.0.1
+  path_provider: ^1.6.22
+  shared_preferences: ^0.5.12+2
+  flutter_launcher_icons: ^0.8.1
+
+dev_dependencies:
+  flutter_launcher_icons: any
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+
+flutter_icons:
+  android: true
+  image_path: "assets/icon.png"
+
