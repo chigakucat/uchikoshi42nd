@@ -8,7 +8,7 @@ if (localPropertiesFile.exists()) {
 
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+    throw new FileNotFoundException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
 }
 
 apply plugin: 'com.android.application'
@@ -55,4 +55,16 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:25.12.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation('androidx.annotation:annotation:1.2.0-alpha01') {
+        force = true
+    }
+
+    implementation('androidx.legacy:legacy-support-core-utils:1.0.0') {
+        force = true
+    }
+
+  //  implementation("io.reactivex.rxjava2:rxjava:$rxjava_version") {
+    //    force = true
+    //}
 }
