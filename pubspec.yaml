@@ -22,10 +22,12 @@ dependencies:
   shared_preferences: ^0.5.12+2
   flutter_launcher_icons: ^0.8.1
 
+
 dev_dependencies:
 #  flutter_launcher_icons: any
   flutter_test:
     sdk: flutter
+  flutter_native_splash: ^0.2.9
 
 flutter:
   uses-material-design: true
@@ -40,3 +42,6 @@ flutter_icons:
   android: true
   image_path: "assets/icon.png"
 
+flutter_native_splash:
+  image: "assets/icon.png"
+  color: "FFFFFF"
