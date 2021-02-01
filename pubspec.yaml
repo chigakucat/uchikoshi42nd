@@ -23,7 +23,7 @@ dependencies:
   flutter_launcher_icons: ^0.8.1
 
 dev_dependencies:
-  flutter_launcher_icons: any
+#  flutter_launcher_icons: any
   flutter_test:
     sdk: flutter
 
@@ -31,6 +31,10 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+  fonts:
+    - family: SourceHanSansJP-Normal
+      fonts:
+        - asset: assets/fonts/SourceHanSansJP-Normal.otf
 
 flutter_icons:
   android: true
