@@ -47,35 +47,35 @@ class HomePage extends StatelessWidget {
                                   Text(
                                     'UCHIKOSHI',
                                     style: TextStyle(
-                                      fontSize: 65,
+                                      fontSize: 50,
                                       color: Colors.deepOrangeAccent,
                                     ),
                                   ),
                                 ],
                               ),
                               SizedBox(
-                                height: 20,
+                                height: 5,
                               ),
                               Row(
                                 children: [
                                   Text(
                                     'FES',
                                     style: TextStyle(
-                                      fontSize: 65,
+                                      fontSize: 50,
                                       color: Color.fromRGBO(93, 255, 43, 1),
                                     ),
                                   ),
                                 ],
                               ),
                               SizedBox(
-                                height: 20,
+                                height: 5,
                               ),
                               Row(
                                 children: [
                                   Text(
                                     'ONLINE',
                                     style: TextStyle(
-                                      fontSize: 65,
+                                      fontSize: 50,
                                       color: Color.fromRGBO(205, 43, 255, 1),
                                     ),
                                   ),
@@ -120,8 +120,9 @@ class HomePage extends StatelessWidget {
         onTap: () async {
           final SharedPreferences prefs = await SharedPreferences.getInstance();
           startLocation = prefs.getString('my_string') ?? '000';
-          final document = await Firestore.instance
+          final document = await FirebaseFirestore.instance
               .collection('images')
+              // ignore: deprecated_member_use
               .document(startLocation)
               .get();
           imageURL = '${document['imageURL']}';
