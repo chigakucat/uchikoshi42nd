@@ -81,6 +81,71 @@ class HomePage extends StatelessWidget {
                                   ),
                                 ],
                               ),
+                              ElevatedButton(
+                                child: const Text('ストリートビューを見る'),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.orange,
+                                  onPrimary: Colors.white,
+                                ),
+                                onPressed: () async {
+                                  final SharedPreferences prefs = await SharedPreferences.getInstance();
+                                  startLocation = prefs.getString('my_string') ?? '000';
+                                  final document = await FirebaseFirestore.instance
+                                      .collection('images')
+                                  // ignore: deprecated_member_use
+                                      .document(startLocation)
+                                      .get();
+                                  imageURL = '${document['imageURL']}';
+                                  location = '${document['location']}';
+                                  o = '${document['o']}';
+                                  p = '${document['p']}';
+                                  g = '${document['g']}';
+                                  b = '${document['b']}';
+                                  if (startLocation == '000') {
+                                    direction = document['fo'];
+                                  } else {
+                                    direction = 0.01;
+                                  }
+                                  Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            PanoramaPageZero(imageURL, location, o, p, g, b, direction),
+                                        fullscreenDialog: true,
+                                      ),
+                                          (route) => false);
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return SimpleDialog(
+                                        title: Text(
+                                          '打越祭へようこそ',
+                                          style: TextStyle(color: Colors.deepOrangeAccent),
+                                        ),
+                                        children: <Widget>[
+                                          SimpleDialogOption(
+                                            onPressed: () => Navigator.pop(context),
+                                            child: Text(
+                                              '操作は左下のボタンで',
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                              ),
+                              ElevatedButton(
+                                child: const Text('パンフレットを見る'),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.orange,
+                                  onPrimary: Colors.white,
+                                ),
+                                onPressed: () {},
+                              ),
                             ],
                           ),
                         ),
@@ -90,7 +155,7 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            Padding(
+            /*Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -114,10 +179,10 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
+            ), */
           ],
         ),
-        onTap: () async {
+      /*  onTap: () async {
           final SharedPreferences prefs = await SharedPreferences.getInstance();
           startLocation = prefs.getString('my_string') ?? '000';
           final document = await FirebaseFirestore.instance
@@ -166,7 +231,7 @@ class HomePage extends StatelessWidget {
               );
             },
           );
-        },
+        }, */
       ),
     );
   }
