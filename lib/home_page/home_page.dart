@@ -42,12 +42,15 @@ class HomePage extends StatelessWidget {
                           color: Colors.white.withOpacity(0.7),
                           child: Column(
                             children: [
+                              SizedBox(
+                                height: 20,
+                              ),
                               Row(
                                 children: [
                                   Text(
                                     'UCHIKOSHI',
                                     style: TextStyle(
-                                      fontSize: 55,
+                                      fontSize: 65,
                                       color: Colors.deepOrangeAccent,
                                     ),
                                   ),
@@ -61,7 +64,7 @@ class HomePage extends StatelessWidget {
                                   Text(
                                     'FES',
                                     style: TextStyle(
-                                      fontSize: 55,
+                                      fontSize: 65,
                                       color: Color.fromRGBO(93, 255, 43, 1),
                                     ),
                                   ),
@@ -75,20 +78,25 @@ class HomePage extends StatelessWidget {
                                   Text(
                                     'ONLINE',
                                     style: TextStyle(
-                                      fontSize: 55,
+                                      fontSize: 65,
                                       color: Color.fromRGBO(205, 43, 255, 1),
                                     ),
                                   ),
                                 ],
                               ),
                               SizedBox(
-                                height: 20,
+                                height: 80,
                               ),
                               SizedBox(
                                 width: 300,
                                 height: 50,
                                 child: ElevatedButton(
-                                  child: const Text('ストリートビューを見る'),
+                                  child: const Text(
+                                    '浅野学園を歩く',
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                    ),
+                                  ),
                                   style: ElevatedButton.styleFrom(
                                     primary: Colors.orange,
                                     onPrimary: Colors.white,
@@ -119,14 +127,15 @@ class HomePage extends StatelessWidget {
                                     Navigator.pushAndRemoveUntil(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => PanoramaPageZero(
-                                              imageURL,
-                                              location,
-                                              o,
-                                              p,
-                                              g,
-                                              b,
-                                              direction),
+                                          builder: (context) =>
+                                              PanoramaPageZero(
+                                                  imageURL,
+                                                  location,
+                                                  o,
+                                                  p,
+                                                  g,
+                                                  b,
+                                                  direction),
                                           fullscreenDialog: true,
                                         ),
                                         (route) => false);
@@ -158,22 +167,27 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(
-                                height: 10,
+                                height: 20,
                               ),
                               SizedBox(
                                 width: 300,
                                 height: 50,
-                                  child: ElevatedButton(
-                                    child: const Text('パンフレットを見る'),
-                                    style: ElevatedButton.styleFrom(
-                                      primary: Colors.orange,
-                                      onPrimary: Colors.white,
-                                      shape: const StadiumBorder(),
+                                child: ElevatedButton(
+                                  child: const Text(
+                                    'パンフレットを見る',
+                                    style: TextStyle(
+                                      fontSize: 20.0,
                                     ),
-                                    onPressed: null, //ボタンの無効化
                                   ),
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.orange,
+                                    onPrimary: Colors.white,
+                                    shape: const StadiumBorder(),
+                                  ),
+                                  onPressed: null, //ボタンの無効化
                                 ),
-                             ],
+                              ),
+                            ],
                           ),
                         ),
                       ),
