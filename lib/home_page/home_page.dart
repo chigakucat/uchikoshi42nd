@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:ufoff/panorama_page/panorama_page_zero.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:ufoff/panorama_page/contents/grouplist.dart';
 
 class HomePage extends StatelessWidget {
   String startLocation;
@@ -104,15 +105,15 @@ class HomePage extends StatelessWidget {
                                   ),
                                   onPressed: () async {
                                     final SharedPreferences prefs =
-                                        await SharedPreferences.getInstance();
+                                    await SharedPreferences.getInstance();
                                     startLocation =
                                         prefs.getString('my_string') ?? '000';
                                     final document =
-                                        await FirebaseFirestore.instance
-                                            .collection('images')
-                                            // ignore: deprecated_member_use
-                                            .document(startLocation)
-                                            .get();
+                                    await FirebaseFirestore.instance
+                                        .collection('images')
+                                    // ignore: deprecated_member_use
+                                        .document(startLocation)
+                                        .get();
                                     imageURL = '${document['imageURL']}';
                                     location = '${document['location']}';
                                     o = '${document['o']}';
@@ -124,7 +125,7 @@ class HomePage extends StatelessWidget {
                                     } else {
                                       direction = 0.01;
                                     }
-                                    Navigator.pushAndRemoveUntil(
+                                    Navigator.push(
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
@@ -138,7 +139,7 @@ class HomePage extends StatelessWidget {
                                                   direction),
                                           fullscreenDialog: true,
                                         ),
-                                        (route) => false);
+                                          );
                                     showDialog(
                                       context: context,
                                       builder: (context) {
@@ -173,18 +174,24 @@ class HomePage extends StatelessWidget {
                                 width: 300,
                                 height: 50,
                                 child: ElevatedButton(
-                                  child: const Text(
-                                    'パンフレットを見る',
-                                    style: TextStyle(
-                                      fontSize: 20.0,
+                                    child: const Text(
+                                      'パンフレットを見る',
+                                      style: TextStyle(
+                                        fontSize: 20.0,
+                                      ),
                                     ),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                    primary: Colors.orange,
-                                    onPrimary: Colors.white,
-                                    shape: const StadiumBorder(),
-                                  ),
-                                  onPressed: null, //ボタンの無効化
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.orange,
+                                      onPrimary: Colors.white,
+                                      shape: const StadiumBorder(),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => Grouplist(imageURL),
+                                          )
+                                      );
+                                    }
                                 ),
                               ),
                             ],

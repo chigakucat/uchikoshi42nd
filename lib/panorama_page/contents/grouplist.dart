@@ -9,7 +9,7 @@ class Grouplist extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(86.0),
+        preferredSize: Size.fromHeight(70.0),
         child: AppBar(
           backgroundColor: Color.fromRGBO(205, 43, 255, 1),
           leading: SizedBox(
@@ -17,7 +17,7 @@ class Grouplist extends StatelessWidget {
             height: 20,
           ),
           title: Padding(
-            padding: const EdgeInsets.only(top: 20.0),
+            padding: const EdgeInsets.only(top: 10.0),
             child: Text(
               '団体一覧',
               style: TextStyle(
@@ -26,7 +26,7 @@ class Grouplist extends StatelessWidget {
               ),
             ),
           ),
-          actions: <Widget>[
+          /*actions: <Widget>[ //必要か議論
             Padding(
               padding: EdgeInsets.only(
                 top: 20.0,
@@ -39,7 +39,7 @@ class Grouplist extends StatelessWidget {
                 },
               ),
             ),
-          ],
+          ],*///ここまで
         ),
       ),
       body: ListView(
@@ -57,6 +57,7 @@ class Grouplist extends StatelessWidget {
           Container(
             height: 20,
           ),
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -260,6 +261,11 @@ class Grouplist extends StatelessWidget {
           ),
           Container(
             height: 20,
+          ),
+          Container(
+            child: Image.network(
+                'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/maps%2Fchu4.png?alt=media&token=8350b767-38bd-44f9-816d-d77a600f0c2a'
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
