@@ -46,7 +46,7 @@ class EndDrawer extends StatelessWidget {
               color: Colors.black,
             ),
             title: Text(
-              '学園地図',
+              '校内地図',
               style: TextStyle(
                 color: Colors.black,
               ),
@@ -67,7 +67,7 @@ class EndDrawer extends StatelessWidget {
               color: Colors.black,
             ),
             title: Text(
-              '団体一覧',
+              '参加団体紹介',
               style: TextStyle(
                 color: Colors.black,
               ),
@@ -84,11 +84,11 @@ class EndDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(
-              Icons.image,
+              Icons.picture_as_pdf,
               color: Colors.black,
             ),
             title: Text(
-              '表紙を見る',
+              'PDF版パンフレットを見る',
               style: TextStyle(
                 color: Colors.black,
               ),
