@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:ufoff/home_page/home_page.dart';
 import 'package:ufoff/panorama_page/contents/cover.dart';
 import 'package:ufoff/panorama_page/contents/grouplist.dart';
 import 'package:ufoff/panorama_page/contents/map.dart';
@@ -42,11 +43,32 @@ class EndDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(
+              Icons.home,
+              color: Colors.black,
+            ),
+            title: Text(
+              'ホーム画面へ',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+            onTap: () async {
+              final document = await Firestore.instance
+                  .collection('contents')
+                  .document('map')
+                  .get();
+              imageURL = '${document['mapURL']}';
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => HomePage()));
+            },
+          ),
+          ListTile(
+            leading: Icon(
               Icons.map,
               color: Colors.black,
             ),
             title: Text(
-              '校内地図',
+              'マップ',
               style: TextStyle(
                 color: Colors.black,
               ),
