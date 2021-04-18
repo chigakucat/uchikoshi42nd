@@ -5,16 +5,28 @@ class Grouplist extends StatelessWidget {
   String imageURL;
   Grouplist(this.imageURL);
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70.0),
+        preferredSize: Size.fromHeight(65.0),
         child: AppBar(
           backgroundColor: Color.fromRGBO(205, 43, 255, 1),
+
           leading: SizedBox(
             width: 20,
             height: 20,
+            child: IconButton(
+              padding: EdgeInsets.only(
+                top: 10.0,
+                left: 15.0,
+              ),
+              icon: const Icon(Icons.arrow_back_ios),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
           ),
           title: Padding(
             padding: const EdgeInsets.only(top: 10.0),
@@ -26,20 +38,7 @@ class Grouplist extends StatelessWidget {
               ),
             ),
           ),
-          /*actions: <Widget>[ //必要か議論
-            Padding(
-              padding: EdgeInsets.only(
-                top: 20.0,
-                right: 16.0,
-              ),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ),
-          ],*///ここまで
+
         ),
       ),
       body: ListView(

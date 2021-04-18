@@ -51,7 +51,7 @@ class HomePage extends StatelessWidget {
                                   Text(
                                     'UCHIKOSHI',
                                     style: TextStyle(
-                                      fontSize: 65,
+                                      fontSize: 55,
                                       color: Colors.deepOrangeAccent,
                                     ),
                                   ),
@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget {
                                   Text(
                                     'FES',
                                     style: TextStyle(
-                                      fontSize: 65,
+                                      fontSize: 55,
                                       color: Color.fromRGBO(93, 255, 43, 1),
                                     ),
                                   ),
@@ -79,7 +79,7 @@ class HomePage extends StatelessWidget {
                                   Text(
                                     'ONLINE',
                                     style: TextStyle(
-                                      fontSize: 65,
+                                      fontSize: 55,
                                       color: Color.fromRGBO(205, 43, 255, 1),
                                     ),
                                   ),
@@ -185,9 +185,15 @@ class HomePage extends StatelessWidget {
                                       onPrimary: Colors.white,
                                       shape: const StadiumBorder(),
                                     ),
-                                    onPressed: () {
+                                    onPressed: () async {
+                                      final document = await Firestore.instance
+                                          .collection('contents')
+                                          .document('uchishi')
+                                          .get();
+                                      imageURL = '${document['uchishiURL']}';
                                       Navigator.push(
                                           context,
+
                                           MaterialPageRoute(builder: (context) => Grouplist(imageURL),
                                           )
                                       );
