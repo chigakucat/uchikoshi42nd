@@ -17,3 +17,6 @@ samples, guidance on mobile development, and a full API reference.
 # uchikoshi41st
 https://github.com/semiprime-1247/uchikoshi41st
 # uchikoshi42nd
+基本的には打越祭のアプリ班で開発を行いますが、Issue及びPull requestを募集しています。
+
+IssueについてはIssueの#3に書き方のテンプレートがありますので、参考にしていただければと思います。
