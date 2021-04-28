@@ -5,7 +5,6 @@ class Grouplist extends StatelessWidget {
   String imageURL;
   Grouplist(this.imageURL);
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +12,6 @@ class Grouplist extends StatelessWidget {
         preferredSize: Size.fromHeight(65.0),
         child: AppBar(
           backgroundColor: Color.fromRGBO(205, 43, 255, 1),
-
           leading: SizedBox(
             width: 20,
             height: 20,
@@ -34,11 +32,10 @@ class Grouplist extends StatelessWidget {
               '団体一覧',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 24,
+                fontSize: 20,
               ),
             ),
           ),
-
         ),
       ),
       body: ListView(

@@ -8,37 +8,34 @@ class SchoolMap extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(86.0),
+        preferredSize: Size.fromHeight(65.0),
         child: AppBar(
           backgroundColor: Color.fromRGBO(93, 255, 43, 1),
           leading: SizedBox(
             width: 20,
             height: 20,
+            child: IconButton(
+              padding: EdgeInsets.only(
+                top: 10.0,
+                left: 15.0,
+              ),
+              icon: const Icon(Icons.arrow_back_ios),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
           ),
           title: Padding(
-            padding: const EdgeInsets.only(top: 20.0),
+            padding: const EdgeInsets.only(top: 10.0),
             child: Text(
-              '学園地図',
+              'マップ',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 24,
+                fontSize: 20,
               ),
             ),
           ),
-          actions: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(
-                top: 20.0,
-                right: 16.0,
-              ),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ),
-          ],
+
         ),
       ),
       body: Center(

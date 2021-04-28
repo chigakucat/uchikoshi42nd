@@ -7,18 +7,19 @@ class BiologyListPageModel extends ChangeNotifier {
   List<BiologyYoutubeTile> biologyyoutubetiles = [];
 
   Future fetchBiologyTiles(code) async {
-    final pdfdocs = await Firestore.instance
+    final pdfdocs = await FirebaseFirestore.instance
         .collection('${code}biologypdftiles')
-        .getDocuments();
-    final biologypdftiles = pdfdocs.documents
+    //.doc()
+        .get();
+    final biologypdftiles = pdfdocs.docs
         .map((pdfdoc) => BiologyPDFTile(
             pdfdoc['title'], pdfdoc['imageURL'], pdfdoc['pdfURL']))
         .toList();
     this.biologypdftiles = biologypdftiles;
-    final docs = await Firestore.instance
+    final docs = await FirebaseFirestore.instance
         .collection('${code}youtubetiles')
-        .getDocuments();
-    final biologyyoutubetiles = docs.documents
+        .get();
+    final biologyyoutubetiles = docs.docs
         .map((doc) => BiologyYoutubeTile(
             doc['title'], doc['imageURL'], doc['youtubeURL']))
         .toList();

@@ -7,8 +7,8 @@ class PDFListPageModel extends ChangeNotifier {
 
   Future fetchPDFTiles(code) async {
     final docs =
-        await Firestore.instance.collection('${code}pdftiles').getDocuments();
-    final pdftiles = docs.documents
+        await FirebaseFirestore.instance.collection('${code}pdftiles').get();
+    final pdftiles = docs.docs
         .map((doc) => PDFTile(doc['title'], doc['imageURL'], doc['pdfURL']))
         .toList();
     this.pdftiles = pdftiles;

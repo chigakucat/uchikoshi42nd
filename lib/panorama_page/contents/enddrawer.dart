@@ -1,15 +1,28 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:ufoff/group_list_page/pdf_list_page.dart';
+import 'package:ufoff/group_list_page/pdf_view_page.dart';
 import 'package:ufoff/home_page/home_page.dart';
 import 'package:ufoff/panorama_page/contents/cover.dart';
 import 'package:ufoff/panorama_page/contents/grouplist.dart';
 import 'package:ufoff/panorama_page/contents/map.dart';
+import 'package:ufoff/panorama_page/panorama_page_model.dart';
+
+
 
 class EndDrawer extends StatelessWidget {
   String imageURL;
+  String url, title, pdfURL;
+  Color _color;
+  bool isLoading = false;
+
+  //get model => PanoramaPageModel();
+
   @override
   Widget build(BuildContext context) {
+
     return Drawer(
+
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
@@ -20,14 +33,7 @@ class EndDrawer extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'パンフレット',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                      ),
-                    ),
-                    IconButton(
+                   /* IconButton(
                       icon: Icon(
                         Icons.arrow_forward_ios,
                         color: Colors.white,
@@ -35,7 +41,15 @@ class EndDrawer extends StatelessWidget {
                       onPressed: () {
                         Navigator.pop(context);
                       },
+                    ),*/
+                    Text(
+                      'パンフレット',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                      ),
                     ),
+
                   ],
                 ),
               ],
@@ -53,9 +67,9 @@ class EndDrawer extends StatelessWidget {
               ),
             ),
             onTap: () async {
-              final document = await Firestore.instance
+              final document = await FirebaseFirestore.instance
                   .collection('contents')
-                  .document('map')
+                  .doc('map')
                   .get();
               imageURL = '${document['mapURL']}';
               Navigator.push(context,
@@ -74,9 +88,9 @@ class EndDrawer extends StatelessWidget {
               ),
             ),
             onTap: () async {
-              final document = await Firestore.instance
+              final document = await FirebaseFirestore.instance
                   .collection('contents')
-                  .document('map')
+                  .doc('map')
                   .get();
               imageURL = '${document['mapURL']}';
               Navigator.push(context,
@@ -95,9 +109,9 @@ class EndDrawer extends StatelessWidget {
               ),
             ),
             onTap: () async {
-              final document = await Firestore.instance
+              final document = await FirebaseFirestore.instance
                   .collection('contents')
-                  .document('uchishi')
+                  .doc('uchishi')
                   .get();
               imageURL = '${document['uchishiURL']}';
               Navigator.push(context,
@@ -116,13 +130,17 @@ class EndDrawer extends StatelessWidget {
               ),
             ),
             onTap: () async {
-              final document = await Firestore.instance
+              final document = await FirebaseFirestore.instance
                   .collection('contents')
-                  .document('cover')
+                  .doc('cover')
                   .get();
               imageURL = '${document['coverURL']}';
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Cover(imageURL)));
+                  MaterialPageRoute(
+                      builder: (context) => PDFListPage(
+                          Colors.deepOrangeAccent,
+                          title,
+                          pdfURL)));
             },
           ),
         ],
