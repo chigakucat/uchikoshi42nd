@@ -9,7 +9,7 @@ class Quiz extends StatefulWidget {
   String title;
   String hint;
   String answer;
-  String url;
+  Uri url;
   Quiz(this._color, this.title, this.hint, this.answer, this.url);
 
   @override
@@ -22,7 +22,7 @@ class _QuizState extends State<Quiz> {
   String title;
   String hint;
   String answer;
-  String url;
+  Uri url;
   _QuizState(this._color, this.title, this.hint, this.answer, this.url);
 
   @override
@@ -37,7 +37,7 @@ class _QuizState extends State<Quiz> {
     });
   }
 
-  Future<File> getFileFromUrl(String url) async {
+  Future<File> getFileFromUrl(Uri url) async {
     try {
       var data = await http.get(url);
       var bytes = data.bodyBytes;
@@ -96,8 +96,7 @@ class _QuizState extends State<Quiz> {
               builder: (context) => Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  RaisedButton(
-                    color: _color,
+                  ElevatedButton(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
@@ -107,6 +106,9 @@ class _QuizState extends State<Quiz> {
                           fontSize: 30,
                         ),
                       ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: _color,
                     ),
                     onPressed: () {
                       if (urlPDFPath != null) {

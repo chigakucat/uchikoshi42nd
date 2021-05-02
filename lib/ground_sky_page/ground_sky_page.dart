@@ -97,19 +97,22 @@ class GroundSky extends StatelessWidget {
                               child: SizedBox(
                                 width: 40,
                                 height: 40,
-                                child: RaisedButton(
-                                  elevation: 16.0,
+                                child: ElevatedButton(
                                   child: Text(
                                     'O',
                                     style: TextStyle(
                                       color: Colors.white,
                                     ),
                                   ),
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.deepOrangeAccent,
+                                    elevation: 16.0,
+                                  ),
                                   onPressed: () async {
                                     model.startLoading();
-                                    final document = await Firestore.instance
+                                    final document = await FirebaseFirestore.instance
                                         .collection('images')
-                                        .document(o)
+                                        .doc(o)
                                         .get();
                                     title = '${document['title']}';
                                     backURL = '${document['backURL']}';
@@ -124,7 +127,6 @@ class GroundSky extends StatelessWidget {
                                                     backURL,
                                                     o)));
                                   },
-                                  color: Colors.deepOrangeAccent,
                                 ),
                               ),
                             ),
@@ -139,20 +141,23 @@ class GroundSky extends StatelessWidget {
                                     child: SizedBox(
                                       width: 40,
                                       height: 40,
-                                      child: RaisedButton(
-                                        elevation: 16.0,
+                                      child: ElevatedButton(
                                         child: Text(
                                           'G',
                                           style: TextStyle(
                                             color: Colors.white,
                                           ),
                                         ),
+                                        style: ElevatedButton.styleFrom(
+                                          primary: Color.fromRGBO(93, 255, 43, 1),
+                                          elevation: 16.0,
+                                        ),
                                         onPressed: () async {
                                           model.startLoading();
-                                          final document = await Firestore
+                                          final document = await FirebaseFirestore
                                               .instance
                                               .collection('images')
-                                              .document(o)
+                                              .doc(o)
                                               .get();
                                           title = '${document['title']}';
                                           model.endLoading();
@@ -166,7 +171,6 @@ class GroundSky extends StatelessWidget {
                                                           title,
                                                           g)));
                                         },
-                                        color: Color.fromRGBO(93, 255, 43, 1),
                                       ),
                                     ),
                                   ),
@@ -175,20 +179,24 @@ class GroundSky extends StatelessWidget {
                                     child: SizedBox(
                                       width: 40,
                                       height: 40,
-                                      child: RaisedButton(
-                                        elevation: 16.0,
+                                      child: ElevatedButton(
                                         child: Text(
                                           'P',
                                           style: TextStyle(
                                             color: Colors.white,
                                           ),
                                         ),
+                                        style: ElevatedButton.styleFrom(
+                                          primary: Color.fromRGBO(205, 43, 255, 1),
+                                          //onPrimary: ,
+                                          elevation: 16.0,
+                                        ),
                                         onPressed: () async {
                                           model.startLoading();
-                                          final document = await Firestore
+                                          final document = await FirebaseFirestore
                                               .instance
                                               .collection('images')
-                                              .document(p)
+                                              .doc(p)
                                               .get();
                                           title = '${document['title']}';
                                           backURL = '${document['backURL']}';
@@ -204,7 +212,7 @@ class GroundSky extends StatelessWidget {
                                                           backURL,
                                                           p)));
                                         },
-                                        color: Color.fromRGBO(205, 43, 255, 1),
+
                                       ),
                                     ),
                                   ),
@@ -216,19 +224,22 @@ class GroundSky extends StatelessWidget {
                               child: SizedBox(
                                 width: 40,
                                 height: 40,
-                                child: RaisedButton(
-                                  elevation: 16.0,
+                                child: ElevatedButton(
                                   child: Text(
                                     'B',
                                     style: TextStyle(
                                       color: Colors.white,
                                     ),
                                   ),
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.lightBlueAccent,
+                                    elevation: 16.0,
+                                  ),
                                   onPressed: () async {
                                     model.endLoading();
-                                    final document = await Firestore.instance
+                                    final document = await FirebaseFirestore.instance
                                         .collection('images')
-                                        .document(b)
+                                        .doc(b)
                                         .get();
                                     final SharedPreferences prefs =
                                         await SharedPreferences.getInstance();
@@ -257,7 +268,7 @@ class GroundSky extends StatelessWidget {
                                         ),
                                         (route) => false);
                                   },
-                                  color: Colors.lightBlueAccent,
+
                                 ),
                               ),
                             ),

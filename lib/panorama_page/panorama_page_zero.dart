@@ -30,7 +30,7 @@ class PanoramaPageZero extends StatelessWidget {
   String backURL;
   String webURL;
   String youtubeURL;
-  String pdfURL;
+  Uri pdfURL;
   PanoramaPageZero(this.imageURL, this.location, this.o, this.p, this.g, this.b,
       this.direction);
 
@@ -109,22 +109,25 @@ class PanoramaPageZero extends StatelessWidget {
                               child: SizedBox(
                                 width: 40,
                                 height: 40,
-                                child: RaisedButton(
-                                  elevation: 16.0,
+                                child: ElevatedButton(
                                   child: Text(
                                     'O',
                                     style: TextStyle(
                                       color: Colors.white,
                                     ),
                                   ),
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.deepOrangeAccent,
+                                    elevation: 16.0,
+                                  ),
                                   onPressed: () async {
                                     model.startLoading();
                                     if (o == null) {
                                       model.endLoading();
                                     } else {
-                                      final document = await Firestore.instance
+                                      final document = await FirebaseFirestore.instance
                                           .collection('images')
-                                          .document(o)
+                                          .doc(o)
                                           .get();
                                       sc = '${document['sc']}';
                                       if (sc == '0') {
@@ -204,7 +207,7 @@ class PanoramaPageZero extends StatelessWidget {
                                                     youtubeURL)));
                                       } else if (sc == '5') {
                                         title = '${document['title']}';
-                                        pdfURL = '${document['pdfURL']}';
+                                        pdfURL = '${document['pdfURL']}' as Uri;
                                         model.endLoading();
                                         Navigator.push(
                                             context,
@@ -255,7 +258,6 @@ class PanoramaPageZero extends StatelessWidget {
                                       }
                                     }
                                   },
-                                  color: Colors.deepOrangeAccent,
                                 ),
                               ),
                             ),
@@ -270,23 +272,26 @@ class PanoramaPageZero extends StatelessWidget {
                                     child: SizedBox(
                                       width: 40,
                                       height: 40,
-                                      child: RaisedButton(
-                                        elevation: 16.0,
+                                      child: ElevatedButton(
                                         child: Text(
                                           'G',
                                           style: TextStyle(
                                             color: Colors.white,
                                           ),
                                         ),
+                                        style: ElevatedButton.styleFrom(
+                                          primary: Color.fromRGBO(93, 255, 43, 1),
+                                          elevation: 16.0,
+                                        ),
                                         onPressed: () async {
                                           model.startLoading();
                                           if (g == null) {
                                             model.endLoading();
                                           } else {
-                                            final document = await Firestore
+                                            final document = await FirebaseFirestore
                                                 .instance
                                                 .collection('images')
-                                                .document(g)
+                                                .doc(g)
                                                 .get();
                                             sc = '${document['sc']}';
                                             if (sc == '0') {
@@ -374,7 +379,7 @@ class PanoramaPageZero extends StatelessWidget {
                                                               youtubeURL)));
                                             } else if (sc == '5') {
                                               title = '${document['title']}';
-                                              pdfURL = '${document['pdfURL']}';
+                                              pdfURL = '${document['pdfURL']}' as Uri;
                                               model.endLoading();
                                               Navigator.push(
                                                   context,
@@ -413,7 +418,6 @@ class PanoramaPageZero extends StatelessWidget {
                                             }
                                           }
                                         },
-                                        color: Color.fromRGBO(93, 255, 43, 1),
                                       ),
                                     ),
                                   ),
@@ -422,23 +426,26 @@ class PanoramaPageZero extends StatelessWidget {
                                     child: SizedBox(
                                       width: 40,
                                       height: 40,
-                                      child: RaisedButton(
-                                        elevation: 16.0,
+                                      child: ElevatedButton(
                                         child: Text(
                                           'P',
                                           style: TextStyle(
                                             color: Colors.white,
                                           ),
                                         ),
+                                        style: ElevatedButton.styleFrom(
+                                          primary: Color.fromRGBO(205, 43, 255, 1),
+                                          elevation: 16.0,
+                                        ),
                                         onPressed: () async {
                                           model.startLoading();
                                           if (p == null) {
                                             model.endLoading();
                                           } else {
-                                            final document = await Firestore
+                                            final document = await FirebaseFirestore
                                                 .instance
                                                 .collection('images')
-                                                .document(p)
+                                                .doc(p)
                                                 .get();
                                             sc = '${document['sc']}';
                                             if (sc == '0') {
@@ -535,7 +542,7 @@ class PanoramaPageZero extends StatelessWidget {
                                                               youtubeURL)));
                                             } else if (sc == '5') {
                                               title = '${document['title']}';
-                                              pdfURL = '${document['pdfURL']}';
+                                              pdfURL = '${document['pdfURL']}' as Uri;
                                               model.endLoading();
                                               Navigator.push(
                                                   context,
@@ -577,7 +584,6 @@ class PanoramaPageZero extends StatelessWidget {
                                             }
                                           }
                                         },
-                                        color: Color.fromRGBO(205, 43, 255, 1),
                                       ),
                                     ),
                                   ),
@@ -589,22 +595,25 @@ class PanoramaPageZero extends StatelessWidget {
                               child: SizedBox(
                                 width: 40,
                                 height: 40,
-                                child: RaisedButton(
-                                  elevation: 16.0,
+                                child: ElevatedButton(
                                   child: Text(
                                     'B',
                                     style: TextStyle(
                                       color: Colors.white,
                                     ),
                                   ),
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.lightBlueAccent,
+                                    elevation: 16.0,
+                                  ),
                                   onPressed: () async {
                                     model.startLoading();
                                     if (b == null) {
                                       model.endLoading();
                                     } else {
-                                      final document = await Firestore.instance
+                                      final document = await FirebaseFirestore.instance
                                           .collection('images')
-                                          .document(b)
+                                          .doc(b)
                                           .get();
                                       sc = '${document['sc']}';
                                       if (sc == '0') {
@@ -684,7 +693,7 @@ class PanoramaPageZero extends StatelessWidget {
                                                     youtubeURL)));
                                       } else if (sc == '5') {
                                         title = '${document['title']}';
-                                        pdfURL = '${document['pdfURL']}';
+                                        pdfURL = '${document['pdfURL']}' as Uri;
                                         model.endLoading();
                                         Navigator.push(
                                             context,
@@ -717,7 +726,6 @@ class PanoramaPageZero extends StatelessWidget {
                                       }
                                     }
                                   },
-                                  color: Colors.lightBlueAccent,
                                 ),
                               ),
                             ),

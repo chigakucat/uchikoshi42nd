@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 class PDF extends StatefulWidget {
   Color _color;
   String title;
-  String url;
+  Uri url;
   PDF(this._color, this.title, this.url);
 
   @override
@@ -18,10 +18,11 @@ class _PDFState extends State<PDF> {
   Color _color;
   String urlPDFPath;
   String title;
-  String url;
+  Uri url;
   _PDFState(this._color, this.title, this.url);
 
   @override
+
   void initState() {
     super.initState();
 
@@ -33,7 +34,7 @@ class _PDFState extends State<PDF> {
     });
   }
 
-  Future<File> getFileFromUrl(String url) async {
+  Future<File> getFileFromUrl(Uri url) async {
     try {
       var data = await http.get(url);
       var bytes = data.bodyBytes;
@@ -53,20 +54,30 @@ class _PDFState extends State<PDF> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(86.0),
+          preferredSize: Size.fromHeight(65.0),
           child: AppBar(
             backgroundColor: _color,
             leading: SizedBox(
               width: 20,
               height: 20,
+              child: IconButton(
+              padding: EdgeInsets.only(
+                top: 10.0,
+                left: 15.0
+              ),
+                icon: const Icon(Icons.arrow_back_ios),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
             ),
             title: Padding(
-              padding: const EdgeInsets.only(top: 20.0),
+              padding: const EdgeInsets.only(top: 10.0),
               child: Text(
                 title,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 24,
+                  fontSize: 20,
                 ),
               ),
             ),
@@ -76,12 +87,7 @@ class _PDFState extends State<PDF> {
                   top: 20.0,
                   right: 16.0,
                 ),
-                child: IconButton(
-                  icon: const Icon(Icons.arrow_forward_ios),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
+
               ),
             ],
           ),
@@ -92,8 +98,7 @@ class _PDFState extends State<PDF> {
               builder: (context) => Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  RaisedButton(
-                    color: _color,
+                  ElevatedButton(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
@@ -103,6 +108,10 @@ class _PDFState extends State<PDF> {
                           color: Colors.white,
                         ),
                       ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: _color,
+                      onPrimary: Colors.white,
                     ),
                     onPressed: () {
                       if (urlPDFPath != null) {
@@ -163,20 +172,30 @@ class _PdfViewPageState extends State<PdfViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(86.0),
+        preferredSize: Size.fromHeight(65.0),
         child: AppBar(
           backgroundColor: Colors.black.withOpacity(0.3),
           leading: SizedBox(
             width: 20,
             height: 20,
+            child: IconButton(
+              padding: EdgeInsets.only(
+                  top: 10.0,
+                  left: 15.0
+              ),
+              icon: const Icon(Icons.arrow_back_ios),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
           ),
           title: Padding(
-            padding: const EdgeInsets.only(top: 20.0),
+            padding: const EdgeInsets.only(top: 10.0),
             child: Text(
               title,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 24,
+                fontSize: 20,
               ),
             ),
           ),
@@ -186,12 +205,7 @@ class _PdfViewPageState extends State<PdfViewPage> {
                 top: 20.0,
                 right: 16.0,
               ),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
+
             ),
           ],
         ),

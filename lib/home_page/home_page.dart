@@ -44,14 +44,14 @@ class HomePage extends StatelessWidget {
                           child: Column(
                             children: [
                               SizedBox(
-                                height: 20,
+                                height: 25,
                               ),
                               Row(
                                 children: [
                                   Text(
                                     'UCHIKOSHI',
                                     style: TextStyle(
-                                      fontSize: 55,
+                                      fontSize: 48,
                                       color: Colors.deepOrangeAccent,
                                     ),
                                   ),
@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget {
                                   Text(
                                     'FES',
                                     style: TextStyle(
-                                      fontSize: 55,
+                                      fontSize: 48,
                                       color: Color.fromRGBO(93, 255, 43, 1),
                                     ),
                                   ),
@@ -79,14 +79,14 @@ class HomePage extends StatelessWidget {
                                   Text(
                                     'ONLINE',
                                     style: TextStyle(
-                                      fontSize: 55,
+                                      fontSize: 48,
                                       color: Color.fromRGBO(205, 43, 255, 1),
                                     ),
                                   ),
                                 ],
                               ),
                               SizedBox(
-                                height: 80,
+                                height: 60,
                               ),
                               SizedBox(
                                 width: 300,
@@ -111,8 +111,7 @@ class HomePage extends StatelessWidget {
                                     final document =
                                     await FirebaseFirestore.instance
                                         .collection('images')
-                                    // ignore: deprecated_member_use
-                                        .document(startLocation)
+                                        .doc(startLocation)
                                         .get();
                                     imageURL = '${document['imageURL']}';
                                     location = '${document['location']}';
@@ -186,9 +185,9 @@ class HomePage extends StatelessWidget {
                                       shape: const StadiumBorder(),
                                     ),
                                     onPressed: () async {
-                                      final document = await Firestore.instance
+                                      final document = await FirebaseFirestore.instance
                                           .collection('contents')
-                                          .document('uchishi')
+                                          .doc('uchishi')
                                           .get();
                                       imageURL = '${document['uchishiURL']}';
                                       Navigator.push(

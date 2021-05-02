@@ -6,10 +6,11 @@ class YoutubeListPageModel extends ChangeNotifier {
   List<YoutubeTile> youtubetiles = [];
 
   Future fetchYoutubeTiles(code) async {
-    final docs = await Firestore.instance
+    final docs = await FirebaseFirestore.instance
         .collection('${code}youtubetiles')
-        .getDocuments();
-    final youtubetiles = docs.documents
+
+        .get();
+    final youtubetiles = docs.docs
         .map((doc) =>
             YoutubeTile(doc['title'], doc['imageURL'], doc['youtubeURL']))
         .toList();
