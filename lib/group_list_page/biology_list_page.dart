@@ -59,7 +59,7 @@ class BiologyListPage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => PDF(_color,
-                              biologypdftile.title, biologypdftile.pdfURL as Uri),
+                              biologypdftile.title, Uri.parse(biologypdftile.pdfURL)),
                         ),
                       );
                     },

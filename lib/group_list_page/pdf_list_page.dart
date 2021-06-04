@@ -56,7 +56,7 @@ class PDFListPage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              PDF(_color, pdftile.title, pdftile.pdfURL as Uri),
+                              PDF(_color, pdftile.title, Uri.parse(pdftile.pdfURL)),
                         ),
                       );
                     },

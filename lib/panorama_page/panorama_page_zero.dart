@@ -207,7 +207,7 @@ class PanoramaPageZero extends StatelessWidget {
                                                     youtubeURL)));
                                       } else if (sc == '5') {
                                         title = '${document['title']}';
-                                        pdfURL = '${document['pdfURL']}' as Uri;
+                                        pdfURL = Uri.parse('${document['pdfURL']}');
                                         model.endLoading();
                                         Navigator.push(
                                             context,
@@ -379,7 +379,7 @@ class PanoramaPageZero extends StatelessWidget {
                                                               youtubeURL)));
                                             } else if (sc == '5') {
                                               title = '${document['title']}';
-                                              pdfURL = '${document['pdfURL']}' as Uri;
+                                              pdfURL = Uri.parse('${document['pdfURL']}');
                                               model.endLoading();
                                               Navigator.push(
                                                   context,
@@ -542,7 +542,7 @@ class PanoramaPageZero extends StatelessWidget {
                                                               youtubeURL)));
                                             } else if (sc == '5') {
                                               title = '${document['title']}';
-                                              pdfURL = '${document['pdfURL']}' as Uri;
+                                              pdfURL = Uri.parse('${document['pdfURL']}');
                                               model.endLoading();
                                               Navigator.push(
                                                   context,
@@ -693,7 +693,7 @@ class PanoramaPageZero extends StatelessWidget {
                                                     youtubeURL)));
                                       } else if (sc == '5') {
                                         title = '${document['title']}';
-                                        pdfURL = '${document['pdfURL']}' as Uri;
+                                        pdfURL = Uri.parse('${document['pdfURL']}');
                                         model.endLoading();
                                         Navigator.push(
                                             context,
