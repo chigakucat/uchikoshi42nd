@@ -1,20 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:ufoff/group_list_page/pdf_list_page.dart';
 import 'package:ufoff/group_list_page/pdf_view_page.dart';
 import 'package:ufoff/home_page/home_page.dart';
-import 'package:ufoff/panorama_page/contents/cover.dart';
 import 'package:ufoff/panorama_page/contents/grouplist.dart';
 import 'package:ufoff/panorama_page/contents/map.dart';
-import 'package:ufoff/panorama_page/panorama_page_model.dart';
-
 
 
 class EndDrawer extends StatelessWidget {
   String imageURL;
-  String url, title, pdfURL;
-  Color _color;
+  String url, title;
   bool isLoading = false;
+  String webURL;
+  Uri pdfURL;
 
   //get model => PanoramaPageModel();
 
@@ -132,12 +129,13 @@ class EndDrawer extends StatelessWidget {
             onTap: () async {
               final document = await FirebaseFirestore.instance
                   .collection('contents')
-                  .doc('cover')
+                  .doc('Pamphlet')
                   .get();
-              imageURL = '${document['coverURL']}';
+              title = '${document['title']}';
+              pdfURL = Uri.parse('${document['pamphlet_id']}');
               Navigator.push(context,
                   MaterialPageRoute(
-                      builder: (context) => PDFListPage(
+                      builder: (context) => PDF(
                           Colors.deepOrangeAccent,
                           title,
                           pdfURL)));
