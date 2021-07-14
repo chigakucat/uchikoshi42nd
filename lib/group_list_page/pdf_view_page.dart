@@ -106,6 +106,7 @@ class _PDFState extends State<PDF> {
                         style: TextStyle(
                           fontSize: 30,
                           color: Colors.white,
+                          fontFamily: 'SourceHanSansJP-Normal',
                         ),
                       ),
                     ),
@@ -134,10 +135,15 @@ class _PDFState extends State<PDF> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
+
                         children: <Widget>[
-                          Text('上のボタンを押してPDFが表示されない場合は'),
-                          Text('このページに一度戻り'),
-                          Text('もう一度上のボタンを押してみてください。')
+                          Text('上のボタンを押してPDFが表示されない場合は\nこのページに一度戻り\nもう一度上のボタンを押してみてください。',
+                            style: TextStyle(
+                            fontFamily: 'SourceHanSansJP-Normal',
+                          ),
+                              textAlign: TextAlign.center,
+                          ),
+
                         ],
                       ),
                     ),
