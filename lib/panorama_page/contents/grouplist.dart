@@ -7,6 +7,7 @@ class Grouplist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double deviceHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(65.0),
@@ -273,16 +274,40 @@ class Grouplist extends StatelessWidget {
                         print("地学部 called.");
                         showDialog(
                             context: context,
-                            builder: (context) => new AlertDialog(
-                              title: Text("地学部(中学棟4階AB教室)"),
-                              content: Text("地学部(中学棟4階AB教室)"),// コンテンツ
-                              actions: <Widget>[
-                                      ElevatedButton(
-                                        child: Text('OK'),
-                                        onPressed: () => Navigator.of(context).pop(1),
+                            builder: (context) {
+                              return AlertDialog(
+                                insetPadding:  EdgeInsets.all(10),
+                                title: Row(
+                                  children: [
+                                    Container(
+                                      height: 50,
+                                      width: 50,
+                                      child: Image.network(
+                                          'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E5%9C%B0%E5%AD%A6%E9%83%A8.png?alt=media&token=90393c8d-830c-4ab4-968d-c57ae9a081fd'),
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.only(
+                                        left: 16,
                                       ),
-                              ],
-                            ),
+                                    ),
+                                    Text("地学部", style: TextStyle(fontSize: 17),),
+                                    Text("（中2AB）", style: TextStyle(fontSize: 14),),
+                                  ],
+                                ),
+                                content: Wrap(
+                                  children: <Widget>[
+                                    Text("地質系の化石や鉱物、宇宙やロケット、気象の分野の世界を展示と解説を交えてお伝えします。是非見に来てください!!"),
+                                  ],
+                                ),
+                                actions: <Widget>[
+                                  ElevatedButton(
+                                    child: Text('OK'),
+                                    onPressed: () =>
+                                        Navigator.of(context).pop(1),
+                                  ),
+                                ],
+                              );
+                            },
                         );
                       },
                       child: Container(
@@ -308,6 +333,43 @@ class Grouplist extends StatelessWidget {
                       behavior: HitTestBehavior.opaque,
                       onTap: () {
                         print("てっけん called.");
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              insetPadding:  EdgeInsets.all(10),
+                              title: Row(
+                                children: [
+                                  Container(
+                                    height: 50,
+                                    width: 50,
+                                    child: Image.network(
+                                        'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E9%89%84%E9%81%93%E7%A0%94%E3%83%AD%E3%82%B3%E3%82%99.jpg?alt=media&token=1a80e80d-8c80-47c7-9717-b46c59b76eb4'),
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                      left: 16,
+                                    ),
+                                  ),
+                                  Text("鉄研<研究班>",style: TextStyle(fontSize: 17),),
+                                  Text("（中2C）", style: TextStyle(fontSize: 14),),
+                                ],
+                              ),
+                              content: Wrap(
+                                children: <Widget>[
+                                  Text("打越祭へお越しの皆様こんにち は!鉄研です!研究班は、例年とは違った形で活動の成果を発表します。 とくとご覧あれ! ※模型班は高校棟3階選択2へ"),
+                                ],
+                              ),
+                              actions: <Widget>[
+                                ElevatedButton(
+                                  child: Text('OK'),
+                                  onPressed: () =>
+                                      Navigator.of(context).pop(1),
+                                ),
+                              ],
+                            );
+                          },
+                        );
                       },
                       child: Container(
                         height: 100,
