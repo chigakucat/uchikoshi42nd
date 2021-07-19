@@ -10,6 +10,7 @@ class Quiz extends StatefulWidget {
   String hint;
   String answer;
   Uri url;
+
   Quiz(this._color, this.title, this.hint, this.answer, this.url);
 
   @override
@@ -23,6 +24,7 @@ class _QuizState extends State<Quiz> {
   String hint;
   String answer;
   Uri url;
+
   _QuizState(this._color, this.title, this.hint, this.answer, this.url);
 
   @override
@@ -57,20 +59,30 @@ class _QuizState extends State<Quiz> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(86.0),
+          preferredSize: Size.fromHeight(65.0),
           child: AppBar(
             backgroundColor: _color,
             leading: SizedBox(
               width: 20,
               height: 20,
+              child: IconButton(
+                padding: EdgeInsets.only(
+                  top: 10.0,
+                  left: 15.0,
+                ),
+                icon: const Icon(Icons.arrow_back_ios),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
             ),
             title: Padding(
-              padding: const EdgeInsets.only(top: 20.0),
+              padding: const EdgeInsets.only(top: 10.0),
               child: Text(
                 title,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 24,
+                  fontSize: 20,
                 ),
               ),
             ),
@@ -79,12 +91,6 @@ class _QuizState extends State<Quiz> {
                 padding: EdgeInsets.only(
                   top: 20.0,
                   right: 16.0,
-                ),
-                child: IconButton(
-                  icon: const Icon(Icons.arrow_forward_ios),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
                 ),
               ),
             ],
@@ -160,6 +166,7 @@ class PdfViewPage extends StatefulWidget {
   PdfViewPage(this._color, this.title, this.hint, this.answer,
       {Key key, this.path})
       : super(key: key);
+
   @override
   _PdfViewPageState createState() =>
       _PdfViewPageState(_color, title, hint, answer);
@@ -180,34 +187,38 @@ class _PdfViewPageState extends State<PdfViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(86.0),
+        preferredSize: Size.fromHeight(65.0),
         child: AppBar(
           backgroundColor: _color,
           leading: SizedBox(
             width: 20,
             height: 20,
+            child: IconButton(
+              padding: EdgeInsets.only(
+                top: 10.0,
+                left: 15.0,
+              ),
+              icon: const Icon(Icons.arrow_back_ios),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
           ),
           title: Padding(
-            padding: const EdgeInsets.only(top: 20.0),
+            padding: const EdgeInsets.only(top: 10.0),
             child: Text(
               title,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 24,
+                fontSize: 20,
               ),
             ),
           ),
           actions: <Widget>[
             Padding(
               padding: EdgeInsets.only(
-                top: 20.0,
-                right: 16.0,
-              ),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+                top: 10.0,
+                left: 15.0,
               ),
             ),
           ],
@@ -254,8 +265,10 @@ class _PdfViewPageState extends State<PdfViewPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        RaisedButton(
-                          color: _color,
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: _color,
+                          ),
                           child: Text(
                             'ヒント',
                             style: TextStyle(
@@ -287,8 +300,10 @@ class _PdfViewPageState extends State<PdfViewPage> {
                             );
                           },
                         ),
-                        RaisedButton(
-                          color: _color,
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: _color,
+                          ),
                           child: Text(
                             '答え',
                             style: TextStyle(

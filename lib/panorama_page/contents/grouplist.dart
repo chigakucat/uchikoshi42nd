@@ -1,12 +1,13 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 
 class Grouplist extends StatelessWidget {
   String imageURL;
+
   Grouplist(this.imageURL);
 
   @override
   Widget build(BuildContext context) {
+    final double deviceHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(65.0),
@@ -53,7 +54,6 @@ class Grouplist extends StatelessWidget {
           Container(
             height: 20,
           ),
-
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -260,8 +260,7 @@ class Grouplist extends StatelessWidget {
           ),
           Container(
             child: Image.network(
-                'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/maps%2Fchu4.png?alt=media&token=8350b767-38bd-44f9-816d-d77a600f0c2a'
-            ),
+                'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/maps%2Fchu4.png?alt=media&token=8350b767-38bd-44f9-816d-d77a600f0c2a'),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -269,11 +268,54 @@ class Grouplist extends StatelessWidget {
               Container(
                 child: Column(
                   children: <Widget>[
-                    Container(
-                      height: 100,
-                      width: 100,
-                      child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E5%9C%B0%E5%AD%A6%E9%83%A8.png?alt=media&token=90393c8d-830c-4ab4-968d-c57ae9a081fd'),
+                    new GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () {
+                        print("地学部 called.");
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                insetPadding:  EdgeInsets.all(10),
+                                title: Row(
+                                  children: [
+                                    Container(
+                                      height: 50,
+                                      width: 50,
+                                      child: Image.network(
+                                          'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E5%9C%B0%E5%AD%A6%E9%83%A8.png?alt=media&token=90393c8d-830c-4ab4-968d-c57ae9a081fd'),
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.only(
+                                        left: 16,
+                                      ),
+                                    ),
+                                    Text("地学部", style: TextStyle(fontSize: 17),),
+                                    Text("（中2AB）", style: TextStyle(fontSize: 14),),
+                                  ],
+                                ),
+                                content: Wrap(
+                                  children: <Widget>[
+                                    Text("地質系の化石や鉱物、宇宙やロケット、気象の分野の世界を展示と解説を交えてお伝えします。是非見に来てください!!"),
+                                  ],
+                                ),
+                                actions: <Widget>[
+                                  ElevatedButton(
+                                    child: Text('OK'),
+                                    onPressed: () =>
+                                        Navigator.of(context).pop(1),
+                                  ),
+                                ],
+                              );
+                            },
+                        );
+                      },
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: Image.network(
+                            'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E5%9C%B0%E5%AD%A6%E9%83%A8.png?alt=media&token=90393c8d-830c-4ab4-968d-c57ae9a081fd'),
+                      ),
                     ),
                     Text(
                       '地学部',
@@ -287,11 +329,54 @@ class Grouplist extends StatelessWidget {
               Container(
                 child: Column(
                   children: <Widget>[
-                    Container(
-                      height: 100,
-                      width: 100,
-                      child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E9%89%84%E9%81%93%E7%A0%94%E3%83%AD%E3%82%B3%E3%82%99.jpg?alt=media&token=1a80e80d-8c80-47c7-9717-b46c59b76eb4'),
+                    new GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () {
+                        print("てっけん called.");
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              insetPadding:  EdgeInsets.all(10),
+                              title: Row(
+                                children: [
+                                  Container(
+                                    height: 50,
+                                    width: 50,
+                                    child: Image.network(
+                                        'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E9%89%84%E9%81%93%E7%A0%94%E3%83%AD%E3%82%B3%E3%82%99.jpg?alt=media&token=1a80e80d-8c80-47c7-9717-b46c59b76eb4'),
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                      left: 16,
+                                    ),
+                                  ),
+                                  Text("鉄研<研究班>",style: TextStyle(fontSize: 17),),
+                                  Text("（中2C）", style: TextStyle(fontSize: 14),),
+                                ],
+                              ),
+                              content: Wrap(
+                                children: <Widget>[
+                                  Text("打越祭へお越しの皆様こんにち は!鉄研です!研究班は、例年とは違った形で活動の成果を発表します。 とくとご覧あれ! ※模型班は高校棟3階選択2へ"),
+                                ],
+                              ),
+                              actions: <Widget>[
+                                ElevatedButton(
+                                  child: Text('OK'),
+                                  onPressed: () =>
+                                      Navigator.of(context).pop(1),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: Image.network(
+                            'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E9%89%84%E9%81%93%E7%A0%94%E3%83%AD%E3%82%B3%E3%82%99.jpg?alt=media&token=1a80e80d-8c80-47c7-9717-b46c59b76eb4'),
+                      ),
                     ),
                     Text(
                       '鉄研<研究班>',
@@ -305,11 +390,17 @@ class Grouplist extends StatelessWidget {
               Container(
                 child: Column(
                   children: <Widget>[
-                    Container(
-                      height: 100,
-                      width: 100,
-                      child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E7%99%BB%E5%B1%B1%E9%83%A8.png?alt=media&token=9ca84baf-8fea-433b-a09d-cfb06f3d0c20'),
+                    new GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () {
+                        print("登山部 called.");
+                      },
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: Image.network(
+                            'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E7%99%BB%E5%B1%B1%E9%83%A8.png?alt=media&token=9ca84baf-8fea-433b-a09d-cfb06f3d0c20'),
+                      ),
                     ),
                     Text(
                       '登山部',
@@ -331,11 +422,17 @@ class Grouplist extends StatelessWidget {
               Container(
                 child: Column(
                   children: <Widget>[
-                    Container(
-                      height: 100,
-                      width: 100,
-                      child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E3%83%AA%E3%82%B9%E3%81%AE%E3%81%8A%E3%81%86%E3%81%A1.jpg?alt=media&token=393a1d9b-9396-4f12-848a-e3f9df6a3f20'),
+                    new GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () {
+                        print("りすのおうち called.");
+                      },
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: Image.network(
+                            'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E3%83%AA%E3%82%B9%E3%81%AE%E3%81%8A%E3%81%86%E3%81%A1.jpg?alt=media&token=393a1d9b-9396-4f12-848a-e3f9df6a3f20'),
+                      ),
                     ),
                     Text(
                       'りすのおうち',
