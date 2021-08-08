@@ -21,7 +21,9 @@ dependencies:
   webview_flutter: ^2.0.8
   path_provider: ^2.0.2
   shared_preferences: ^2.0.6
-  flutter_launcher_icons: ^0.9.0
+  flutter_launcher_icons: ^0.9.0 #更新が必要かも↑
+  flutter_local_notifications: ^5.0.0
+  timezone: any
 
 
 dev_dependencies:
