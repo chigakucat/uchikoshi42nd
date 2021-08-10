@@ -1,5 +1,3 @@
-import 'dart:io';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart' as NotifyLib;
 import 'package:timezone/standalone.dart' as TZ;
 import 'package:timezone/timezone.dart' as TZ;
@@ -8,7 +6,7 @@ class ufoNotify{
   final NotifyLib.FlutterLocalNotificationsPlugin        NotificationsPlugin       =NotifyLib.FlutterLocalNotificationsPlugin();
   final NotifyLib.AndroidFlutterLocalNotificationsPlugin AndroidNotificationsPlugin=NotifyLib.AndroidFlutterLocalNotificationsPlugin();
   final NotifyLib.IOSFlutterLocalNotificationsPlugin     IOSNotificationPlugin     =NotifyLib.IOSFlutterLocalNotificationsPlugin();
-  final NotifyLib.AndroidInitializationSettings          AndroidInitSettings       =NotifyLib.AndroidInitializationSettings("splash");
+  final NotifyLib.AndroidInitializationSettings          AndroidInitSettings       =NotifyLib.AndroidInitializationSettings("icon");
   final NotifyLib.IOSInitializationSettings              IOSInitSettings           =NotifyLib.IOSInitializationSettings();
   NotifyLib.InitializationSettings                 InitSettings;
   TZ.Location                                      TimezoneJapan;
