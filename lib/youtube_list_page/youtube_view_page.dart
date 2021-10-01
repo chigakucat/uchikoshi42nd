@@ -76,7 +76,7 @@ class _YoutubeState extends State<Youtube> {
                 child: ElevatedButton(
                     child: Text(
                       '再生する',
-                      style: TextStyle(color: Colors.white, fontSize: 40),
+                      style: TextStyle(color: Colors.white, fontFamily: 'SourceHanSansJP-Normal', fontSize: 40),
                     ),
                     style: ElevatedButton.styleFrom(
                       primary: _color,

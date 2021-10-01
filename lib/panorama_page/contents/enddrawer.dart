@@ -4,6 +4,7 @@ import 'package:ufoff/group_list_page/pdf_view_page.dart';
 import 'package:ufoff/home_page/home_page.dart';
 import 'package:ufoff/panorama_page/contents/grouplist.dart';
 import 'package:ufoff/panorama_page/contents/map.dart';
+import 'package:ufoff/radio_page/radio_page.dart';
 
 
 class EndDrawer extends StatelessWidget {
@@ -12,6 +13,8 @@ class EndDrawer extends StatelessWidget {
   bool isLoading = false;
   String webURL;
   Uri pdfURL;
+  String radioURL;
+  String b;
 
   //get model => PanoramaPageModel();
 
@@ -139,6 +142,33 @@ class EndDrawer extends StatelessWidget {
                           Colors.deepOrangeAccent,
                           title,
                           pdfURL)));
+            },
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.radio,
+              color: Colors.black,
+            ),
+            title: Text(
+              'アサノラジオ局を聴く',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+            onTap: () async {
+              final document = await FirebaseFirestore.instance
+                  .collection('radio')
+                  .doc('logo')
+                  .get();
+              title = '${document['title']}';
+              radioURL = '${document['radio_id']}';
+              b = '';
+              Navigator.push(context,
+                  MaterialPageRoute(
+                      builder: (context) => asanoRadio(
+                          Colors.grey.shade900,
+                        title,
+                      radioURL,)));
             },
           ),
         ],

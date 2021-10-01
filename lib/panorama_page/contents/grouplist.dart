@@ -8,7 +8,7 @@ class Grouplist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 9,
+      length: 8,
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(90.0),
@@ -49,9 +49,6 @@ class Grouplist extends StatelessWidget {
               // タブに表示する内容
               tabs: [
                 Tab(
-                  child: Text('地下1階'),
-                ),
-                Tab(
                   child: Text('1階'),
                 ),
                 Tab(
@@ -89,70 +86,6 @@ class Grouplist extends StatelessWidget {
                       padding: EdgeInsets.all(8.0),
                       height: 68,
                       child: Text(
-                        '高校棟地下1階',
-                        style: TextStyle(
-                          fontSize: 32,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                height: 100,
-                                width: 100,
-                                child: Image.network(
-                                    'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E5%8C%96%E5%AD%A6.png?alt=media&token=e79347ae-1b10-480b-9fcf-ee33056009f8'),
-                              ),
-                              Text(
-                                '化学部',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                height: 100,
-                                width: 100,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                height: 100,
-                                width: 100,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            ListView(
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(8.0),
-                      height: 68,
-                      child: Text(
                         '中学棟1階',
                         style: TextStyle(
                           fontSize: 32,
@@ -165,24 +98,7 @@ class Grouplist extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Container(
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                height: 100,
-                                width: 100,
-                                child: Image.network(
-                                    'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E3%83%86%E3%82%99%E3%82%A3%E3%83%98%E3%82%99%E3%83%BC%E3%83%88%E9%83%A8%E3%83%AD%E3%82%B3%E3%82%99.jpg?alt=media&token=3ccd91bb-7c5c-43d7-8a3d-ced709ff4648'),
-                              ),
-                              Text(
-                                'ディベート部',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+
                         Container(
                           child: Column(
                             children: <Widget>[
@@ -224,29 +140,61 @@ class Grouplist extends StatelessWidget {
                         Container(
                           child: Column(
                             children: <Widget>[
-                              Container(
-                                height: 100,
-                                width: 100,
-                                child: Image.network(
-                                    'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E7%94%9F%E5%BE%92%E4%BC%9A.png?alt=media&token=284167c5-f9e4-4e87-b13a-5d9c78014bf4'),
-                              ),
-                              Text(
-                                '生徒会',
-                                style: TextStyle(
-                                  fontSize: 18,
+                              new GestureDetector(
+                                behavior: HitTestBehavior.opaque,
+                                onTap: () {
+                                  print("生物部 called.");
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        insetPadding: EdgeInsets.all(10),
+                                        title: Row(
+                                          children: [
+                                            Container(
+                                              height: 50,
+                                              width: 50,
+                                              child: Image.network(
+                                                  'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2FK1%2Fs-%E7%94%9F%E7%89%A9%E9%83%A8%E3%83%AD%E3%82%B4.jpg?alt=media&token=ff5be89c-de63-42c0-8daa-c25aea5cd7f4'),
+                                            ),
+                                            Container(
+                                              padding: EdgeInsets.only(
+                                                left: 16,
+                                              ),
+                                            ),
+                                            Text(
+                                              "生物部",
+                                              style: TextStyle(fontSize: 17),
+                                            ),
+                                            Text(
+                                              "（生物教室）",
+                                              style: TextStyle(fontSize: 14),
+                                            ),
+                                          ],
+                                        ),
+                                        content: Wrap(
+                                          children: <Widget>[
+                                            Text(
+                                                "ウサギやカエル、魚など様々な生き物の展示や生物部クイズはもちろん、今年はカメレースもやります！カメレースと生物部クイズでは景品を用意しています。さらに今年は昆虫標本の展示にも力を入れています。また、毎年好評のマウスの解剖実験、DNA抽出実験もやります。是非お越し下さい。"),
+                                          ],
+                                        ),
+                                        actions: <Widget>[
+                                          ElevatedButton(
+                                            child: Text('OK'),
+                                            onPressed: () =>
+                                                Navigator.of(context).pop(1),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  height: 100,
+                                  width: 100,
+                                  child: Image.network(
+                                      'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2FK1%2Fs-%E7%94%9F%E7%89%A9%E9%83%A8%E3%83%AD%E3%82%B4.jpg?alt=media&token=ff5be89c-de63-42c0-8daa-c25aea5cd7f4'),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                height: 100,
-                                width: 100,
-                                child: Image.network(
-                                    'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E7%94%9F%E7%89%A9%E9%83%A8%E3%83%AD%E3%82%B3%E3%82%99.jpeg?alt=media&token=05b7648d-7926-4c1f-80e0-fd5ed8118476'),
                               ),
                               Text(
                                 '生物部',
@@ -260,11 +208,129 @@ class Grouplist extends StatelessWidget {
                         Container(
                           child: Column(
                             children: <Widget>[
-                              Container(
-                                height: 100,
-                                width: 100,
-                                child: Image.network(
-                                    'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2F%E7%BE%8E%E8%A1%93%E9%83%A8.png?alt=media&token=993bc36f-7772-4129-82a0-8b663c6e98e7'),
+                              new GestureDetector(
+                                behavior: HitTestBehavior.opaque,
+                                onTap: () {
+                                  print("生徒会 called.");
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        insetPadding: EdgeInsets.all(10),
+                                        title: Row(
+                                          children: [
+                                            Container(
+                                              height: 50,
+                                              width: 50,
+                                              child: Image.network(
+                                                  'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2FK1%2Fs-%E7%94%9F%E5%BE%92%E4%BC%9A%E3%83%AD%E3%82%B4.jpg?alt=media&token=757a2849-09c3-4338-ac68-7eb9e27f1d90'),
+                                            ),
+                                            Container(
+                                              padding: EdgeInsets.only(
+                                                left: 16,
+                                              ),
+                                            ),
+                                            Text(
+                                              "生徒会",
+                                              style: TextStyle(fontSize: 17),
+                                            ),
+                                            Text(
+                                              "（生徒会室）",
+                                              style: TextStyle(fontSize: 14),
+                                            ),
+                                          ],
+                                        ),
+                                        content: Wrap(
+                                          children: <Widget>[
+                                            Text(
+                                                "みなさんこんにちは！浅野学園生徒会です。生徒会では、毎年同様チャリティーグッズの販売を行っています。今年はなんと、新デザインのシャープペンシルを販売しています。興味のある方はぜひ 高校棟1階 生徒会室までお越しください。"),
+                                          ],
+                                        ),
+                                        actions: <Widget>[
+                                          ElevatedButton(
+                                            child: Text('OK'),
+                                            onPressed: () =>
+                                                Navigator.of(context).pop(1),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  height: 100,
+                                  width: 100,
+                                  child: Image.network(
+                                      'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2FK1%2Fs-%E7%94%9F%E5%BE%92%E4%BC%9A%E3%83%AD%E3%82%B4.jpg?alt=media&token=757a2849-09c3-4338-ac68-7eb9e27f1d90'),
+                                ),
+                              ),
+                              Text(
+                                '生徒会',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            children: <Widget>[
+                              new GestureDetector(
+                                behavior: HitTestBehavior.opaque,
+                                onTap: () {
+                                  print("美術部 called.");
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        insetPadding: EdgeInsets.all(10),
+                                        title: Row(
+                                          children: [
+                                            Container(
+                                              height: 50,
+                                              width: 50,
+                                              child: Image.network(
+                                                  'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2FK1%2Fs-%E7%BE%8E%E8%A1%93%E3%80%80%E3%83%AD%E3%82%B4_page.jpg?alt=media&token=0d166e5f-5451-416a-baeb-f527aa0a57d3'),
+                                            ),
+                                            Container(
+                                              padding: EdgeInsets.only(
+                                                left: 16,
+                                              ),
+                                            ),
+                                            Text(
+                                              "美術部",
+                                              style: TextStyle(fontSize: 17),
+                                            ),
+                                            Text(
+                                              "（美術教室）",
+                                              style: TextStyle(fontSize: 14),
+                                            ),
+                                          ],
+                                        ),
+                                        content: Wrap(
+                                          children: <Widget>[
+                                            Text(
+                                                "鉛筆、水彩、油画、立体、映像、と様々なメディアを用いた、美術部員の作品がお待ちしています。ぜひお越しください。"),
+                                          ],
+                                        ),
+                                        actions: <Widget>[
+                                          ElevatedButton(
+                                            child: Text('OK'),
+                                            onPressed: () =>
+                                                Navigator.of(context).pop(1),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  height: 100,
+                                  width: 100,
+                                  child: Image.network(
+                                      'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2FK1%2Fs-%E7%BE%8E%E8%A1%93%E3%80%80%E3%83%AD%E3%82%B4_page.jpg?alt=media&token=0d166e5f-5451-416a-baeb-f527aa0a57d3'),
+                                ),
                               ),
                               Text(
                                 '美術部',
