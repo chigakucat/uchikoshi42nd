@@ -83,6 +83,7 @@ class _NotifySettingPageState extends State<NotifySettingPage> {
     return Scaffold(
         appBar: AppBar(
           title: Text("通知設定"),
+          backgroundColor: Colors.deepOrangeAccent,
         ),
         body: ListView.separated(
             itemBuilder: (context, index) => ListTile(
