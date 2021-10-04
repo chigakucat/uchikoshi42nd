@@ -7,6 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import 'package:ufoff/notify_engine/notify_engine.dart';
 import 'package:http/http.dart' as http;
+import 'package:firebase_storage/firebase_storage.dart';
 
 _PageLog(String Text) {
   debugPrintSynchronously("[NotifySettingPage] $Text");
@@ -59,8 +60,8 @@ class _NotifySettingPageState extends State<NotifySettingPage> {
   }
 
   Future<List> getEventDataFromWeb() async {
-    http.Response responce = await http.get(Uri(scheme: "http",port: 8000,host: "127.0.0.1"));
-    return jsonDecode(utf8.decode(responce.bodyBytes));
+    FirebaseStorage storage = FirebaseStorage.instance;
+    return jsonDecode(utf8.decode(await storage.ref("notify_dats/notifydatas").getData()));
   }
 
   @override
