@@ -99,7 +99,7 @@ class _RadioState extends State<asanoRadio> {
                 height: 300,
                 width: 500,
                 child: Image.network(
-                    'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/radio%2Fs-%E7%95%AA%E7%B5%84%E8%A1%A8%EF%BC%91%EF%BC%88%E4%BB%AE%EF%BC%89.jpg?alt=media&token=ead62f78-849f-48e5-a85c-6fc119e2f9ed'),
+                    'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/radio%2Fs-%E7%95%AA%E7%B5%84%E8%A1%A81%EF%BC%88%E8%A8%82%E6%AD%A3%EF%BC%89.jpg?alt=media&token=a8ce3f07-63d7-41ce-bb56-aea6b2b16685'),
               ),
               Container(
                 decoration: BoxDecoration(
