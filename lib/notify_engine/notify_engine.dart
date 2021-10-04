@@ -2,6 +2,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart' as
 import 'package:timezone/standalone.dart' as TZ;
 import 'package:timezone/timezone.dart' as TZ;
 import 'package:timezone/data/latest.dart' as TZ;
+
 class ufoNotify{
   final NotifyLib.FlutterLocalNotificationsPlugin        NotificationsPlugin       =NotifyLib.FlutterLocalNotificationsPlugin();
   final NotifyLib.AndroidFlutterLocalNotificationsPlugin AndroidNotificationsPlugin=NotifyLib.AndroidFlutterLocalNotificationsPlugin();
@@ -30,7 +31,6 @@ class ufoNotify{
     this.InitSettings=NotifyLib.InitializationSettings(android: AndroidInitSettings,iOS:IOSInitSettings,);
     NotificationsPlugin.initialize(this.InitSettings,onSelectNotification: onNotifySelect);
     TZ.initializeTimeZones();
-    print("==========Timezone database initialize finished.==========");
     this.isInitialized=true;
     TimezoneJapan=TZ.getLocation("Asia/Tokyo");
     //final detroit = TZ.getLocation('America/Detroit');
@@ -38,16 +38,16 @@ class ufoNotify{
   }
   Future<dynamic> onNotifySelect(String payload){
     /*未実装*/
+    return Future.value(0);
   }
   void scheduleEventNotify(
       String title,
       String location,
       int id,
       DateTime datetime,
-      {NotifyLib.NotificationDetails notificationdetails=null}
+      {NotifyLib.NotificationDetails notificationdetails=const NotifyLib.NotificationDetails()}
       ){
     if (notificationdetails==null) notificationdetails=DefaultNotifyDetails;
-    //print("[========== Very very importance message is here! ==========>]"+TZ.local.toString());
     scheduleNotify("まもなく${title}が${location}で始まります","${datetime.hour}時${datetime.minute}分から${location}で${title}が始まります",id,TZ.TZDateTime.from(datetime,TZ.local).add(Duration(minutes: -10)),notificationdetails);
   }
   void scheduleNotify(
@@ -66,5 +66,8 @@ class ufoNotify{
         uiLocalNotificationDateInterpretation: NotifyLib.UILocalNotificationDateInterpretation.absoluteTime,
         androidAllowWhileIdle: true
     );
+  }
+  void cancel(id){
+    NotificationsPlugin.cancel(id);
   }
 }
