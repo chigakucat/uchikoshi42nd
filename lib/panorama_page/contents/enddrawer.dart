@@ -4,6 +4,7 @@ import 'package:ufoff/group_list_page/pdf_view_page.dart';
 import 'package:ufoff/home_page/home_page.dart';
 import 'package:ufoff/panorama_page/contents/grouplist.dart';
 import 'package:ufoff/panorama_page/contents/map.dart';
+import 'package:ufoff/notify_engine/notifysetpage.dart';
 
 
 class EndDrawer extends StatelessWidget {
@@ -141,6 +142,12 @@ class EndDrawer extends StatelessWidget {
                           pdfURL)));
             },
           ),
+          ListTile(
+            leading: Icon(Icons.alarm),
+            onTap: () async {
+              Navigator.push(context,MaterialPageRoute(builder:(context) => NotifySettingPage()));
+            }
+          )
         ],
       ),
     );
