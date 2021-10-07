@@ -47,6 +47,7 @@ class EndDrawer extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 24,
+                          fontFamily: 'SourceHanSansJP-Normal'
                       ),
                     ),
 
@@ -64,6 +65,7 @@ class EndDrawer extends StatelessWidget {
               'ホーム画面へ',
               style: TextStyle(
                 color: Colors.black,
+                  fontFamily: 'SourceHanSansJP-Normal'
               ),
             ),
             onTap: () async {
@@ -85,6 +87,7 @@ class EndDrawer extends StatelessWidget {
               'マップ',
               style: TextStyle(
                 color: Colors.black,
+                  fontFamily: 'SourceHanSansJP-Normal'
               ),
             ),
             onTap: () async {
@@ -106,6 +109,7 @@ class EndDrawer extends StatelessWidget {
               '参加団体紹介',
               style: TextStyle(
                 color: Colors.black,
+                  fontFamily: 'SourceHanSansJP-Normal'
               ),
             ),
             onTap: () async {
@@ -127,6 +131,7 @@ class EndDrawer extends StatelessWidget {
               'PDF版パンフレットを見る',
               style: TextStyle(
                 color: Colors.black,
+                  fontFamily: 'SourceHanSansJP-Normal'
               ),
             ),
             onTap: () async {
@@ -153,6 +158,7 @@ class EndDrawer extends StatelessWidget {
               'アサノラジオ局を聴く',
               style: TextStyle(
                 color: Colors.black,
+                  fontFamily: 'SourceHanSansJP-Normal'
               ),
             ),
             onTap: () async {
