@@ -78,6 +78,7 @@ class _PDFState extends State<PDF> {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
+                    fontFamily: 'SourceHanSansJP-Normal'
                 ),
               ),
             ),
