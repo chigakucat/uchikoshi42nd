@@ -1945,6 +1945,73 @@ class Grouplist extends StatelessWidget {
                                               height: 50,
                                               width: 50,
                                               child: Image.network(
+                                                  'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2FC5%2Fs-%E6%A3%8B%E9%81%93%E9%83%A8%E3%83%AD%E3%82%B4.jpg?alt=media&token=ebcf25c6-7a41-4dbe-9981-2177beda039e'),
+                                            ),
+                                            Container(
+                                              padding: EdgeInsets.only(
+                                                left: 16,
+                                              ),
+                                            ),
+                                            Text(
+                                              "棋道部",
+                                              style: TextStyle(fontSize: 17),
+                                            ),
+                                            Text(
+                                              "（中3E）",
+                                              style: TextStyle(fontSize: 14),
+                                            ),
+                                          ],
+                                        ),
+                                        content: Wrap(
+                                          children: <Widget>[
+                                            Text(
+                                                "そこの君、棋道部員と将棋や囲碁を指さないか！部員達は君の挑戦を待っている。初心者も大歓迎。さあ、棋道部へLet's go!"),
+                                          ],
+                                        ),
+                                        actions: <Widget>[
+                                          ElevatedButton(
+                                            child: Text('OK'),
+                                            onPressed: () =>
+                                                Navigator.of(context).pop(1),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  height: 100,
+                                  width: 100,
+                                  child: Image.network(
+                                      'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2FC5%2Fs-%E6%A3%8B%E9%81%93%E9%83%A8%E3%83%AD%E3%82%B4.jpg?alt=media&token=ebcf25c6-7a41-4dbe-9981-2177beda039e'),
+                                ),
+                              ),
+                              Text(
+                                '棋道部',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            children: <Widget>[
+                              new GestureDetector(
+                                behavior: HitTestBehavior.opaque,
+                                onTap: () {
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        insetPadding: EdgeInsets.all(10),
+                                        title: Row(
+                                          children: [
+                                            Container(
+                                              height: 50,
+                                              width: 50,
+                                              child: Image.network(
                                                   'https://firebasestorage.googleapis.com/v0/b/uchikoshifesonline.appspot.com/o/%E3%83%AD%E3%82%B4%2FC5%2Fs-%E3%83%AD%E3%82%B4.jpg?alt=media&token=55f647f9-a585-43b4-8a15-739051555e1f'),
                                             ),
                                             Container(
@@ -1957,7 +2024,7 @@ class Grouplist extends StatelessWidget {
                                               style: TextStyle(fontSize: 17),
                                             ),
                                             Text(
-                                              "（中3EF）",
+                                              "（中3F）",
                                               style: TextStyle(fontSize: 14),
                                             ),
                                           ],
