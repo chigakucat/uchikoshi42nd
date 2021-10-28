@@ -9,6 +9,7 @@ class BiologyListPage extends StatelessWidget {
   Color _color;
   String title;
   String code;
+
   BiologyListPage(this._color, this.title, this.code);
 
   @override
@@ -46,9 +47,9 @@ class BiologyListPage extends StatelessWidget {
                             child: Text(
                               biologypdftile.title,
                               style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black,
-                              ),
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontFamily: 'SourceHanSansJP-Normal'),
                             ),
                           ),
                         ],
@@ -58,8 +59,10 @@ class BiologyListPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => PDF(_color,
-                              biologypdftile.title, Uri.parse(biologypdftile.pdfURL)),
+                          builder: (context) => PDF(
+                              _color,
+                              biologypdftile.title,
+                              Uri.parse(biologypdftile.pdfURL)),
                         ),
                       );
                     },
@@ -98,9 +101,9 @@ class BiologyListPage extends StatelessWidget {
                             child: Text(
                               youtubetile.title,
                               style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black,
-                              ),
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontFamily: 'SourceHanSansJP-Normal'),
                             ),
                           ),
                         ],
@@ -133,9 +136,9 @@ class BiologyListPage extends StatelessWidget {
                   child: Text(
                     title,
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                    ),
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontFamily: 'SourceHanSansJP-Normal'),
                   ),
                 ),
                 actions: <Widget>[
@@ -170,11 +173,15 @@ class BiologyListPage extends StatelessWidget {
                       children: [
                         Text(
                           '動',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'SourceHanSansJP-Normal'),
                         ),
                         Text(
                           '画',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'SourceHanSansJP-Normal'),
                         ),
                       ],
                     ),
@@ -202,11 +209,15 @@ class BiologyListPage extends StatelessWidget {
                       children: [
                         Text(
                           '画',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'SourceHanSansJP-Normal'),
                         ),
                         Text(
                           '像',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'SourceHanSansJP-Normal'),
                         ),
                       ],
                     ),

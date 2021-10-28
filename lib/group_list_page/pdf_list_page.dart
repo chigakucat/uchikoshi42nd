@@ -7,6 +7,7 @@ class PDFListPage extends StatelessWidget {
   Color _color;
   String title;
   String code;
+
   PDFListPage(this._color, this.title, this.code);
 
   @override
@@ -43,9 +44,9 @@ class PDFListPage extends StatelessWidget {
                             child: Text(
                               pdftile.title,
                               style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black,
-                              ),
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontFamily: 'SourceHanSansJP-Normal'),
                             ),
                           ),
                         ],
@@ -55,8 +56,8 @@ class PDFListPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              PDF(_color, pdftile.title, Uri.parse(pdftile.pdfURL)),
+                          builder: (context) => PDF(
+                              _color, pdftile.title, Uri.parse(pdftile.pdfURL)),
                         ),
                       );
                     },
@@ -88,9 +89,9 @@ class PDFListPage extends StatelessWidget {
                   child: Text(
                     title,
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontFamily: 'SourceHanSansJP-Normal'),
                   ),
                 ),
                 /*actions: <Widget>[
