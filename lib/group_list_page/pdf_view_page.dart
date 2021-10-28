@@ -8,6 +8,7 @@ class PDF extends StatefulWidget {
   Color _color;
   String title;
   Uri url;
+
   PDF(this._color, this.title, this.url);
 
   @override
@@ -19,10 +20,10 @@ class _PDFState extends State<PDF> {
   String urlPDFPath;
   String title;
   Uri url;
+
   _PDFState(this._color, this.title, this.url);
 
   @override
-
   void initState() {
     super.initState();
 
@@ -61,10 +62,7 @@ class _PDFState extends State<PDF> {
               width: 20,
               height: 20,
               child: IconButton(
-              padding: EdgeInsets.only(
-                top: 10.0,
-                left: 15.0
-              ),
+                padding: EdgeInsets.only(top: 10.0, left: 15.0),
                 icon: const Icon(Icons.arrow_back_ios),
                 onPressed: () {
                   Navigator.pop(context);
@@ -76,10 +74,9 @@ class _PDFState extends State<PDF> {
               child: Text(
                 title,
                 style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                    fontFamily: 'SourceHanSansJP-Normal'
-                ),
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontFamily: 'SourceHanSansJP-Normal'),
               ),
             ),
             actions: <Widget>[
@@ -88,7 +85,6 @@ class _PDFState extends State<PDF> {
                   top: 20.0,
                   right: 16.0,
                 ),
-
               ),
             ],
           ),
@@ -136,15 +132,14 @@ class _PDFState extends State<PDF> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
-
                         children: <Widget>[
-                          Text('上のボタンを押してPDFが表示されない場合は\nこのページに一度戻り\nもう一度上のボタンを押してみてください。',
+                          Text(
+                            '上のボタンを押してPDFが表示されない場合は\nこのページに一度戻り\nもう一度上のボタンを押してみてください。',
                             style: TextStyle(
-                            fontFamily: 'SourceHanSansJP-Normal',
+                              fontFamily: 'SourceHanSansJP-Normal',
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                              textAlign: TextAlign.center,
-                          ),
-
                         ],
                       ),
                     ),
@@ -164,6 +159,7 @@ class PdfViewPage extends StatefulWidget {
   final String path;
 
   PdfViewPage(this.title, {Key key, this.path}) : super(key: key);
+
   @override
   _PdfViewPageState createState() => _PdfViewPageState(title);
 }
@@ -173,6 +169,7 @@ class _PdfViewPageState extends State<PdfViewPage> {
   int _totalPages = 0;
   bool pdfReady = false;
   PDFViewController _pdfViewController;
+
   _PdfViewPageState(this.title);
 
   @override
@@ -186,10 +183,7 @@ class _PdfViewPageState extends State<PdfViewPage> {
             width: 20,
             height: 20,
             child: IconButton(
-              padding: EdgeInsets.only(
-                  top: 10.0,
-                  left: 15.0
-              ),
+              padding: EdgeInsets.only(top: 10.0, left: 15.0),
               icon: const Icon(Icons.arrow_back_ios),
               onPressed: () {
                 Navigator.pop(context);
@@ -201,9 +195,9 @@ class _PdfViewPageState extends State<PdfViewPage> {
             child: Text(
               title,
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-              ),
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontFamily: 'SourceHanSansJP-Normal'),
             ),
           ),
           actions: <Widget>[
@@ -212,7 +206,6 @@ class _PdfViewPageState extends State<PdfViewPage> {
                 top: 20.0,
                 right: 16.0,
               ),
-
             ),
           ],
         ),

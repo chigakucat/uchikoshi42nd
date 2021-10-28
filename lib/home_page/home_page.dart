@@ -107,7 +107,8 @@ class HomePage extends StatelessWidget {
                                     final SharedPreferences prefs =
                                     await SharedPreferences.getInstance();
                                     startLocation =
-                                        prefs.getString('my_string') ?? '000';
+                                        prefs.getString('my_string') ??
+                                            '000';
                                     final document =
                                     await FirebaseFirestore.instance
                                         .collection('images')
