@@ -16,7 +16,7 @@ dependencies:
   panorama: ^0.4.1
   provider: ^6.0.0
   flutter_pdfview: ^1.2.0
-  flutter_youtube: ^2.0.0+1
+
   webview_flutter: ^2.0.12
   path_provider: ^2.0.2
   shared_preferences: ^2.0.6
