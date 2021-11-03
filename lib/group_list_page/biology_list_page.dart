@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:ufoff/group_list_page/pdf_view_page.dart';
-import 'package:ufoff/youtube_list_page/youtube_view_page.dart';
 import 'package:provider/provider.dart';
 import 'biology_list_page_model.dart';
 
@@ -110,13 +109,30 @@ class BiologyListPage extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Youtube(_color,
-                              youtubetile.title, youtubetile.youtubeURL),
-                        ),
-                      );
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return SimpleDialog(
+                                          title: Text(
+                                            'error',
+                                            style: TextStyle(
+                                                color: Colors.deepOrangeAccent),
+                                          ),
+                                          children: <Widget>[
+                                            SimpleDialogOption(
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                              child: Text(
+                                                'ただいまサポートしていない機能です。',
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
                     },
                   ),
                 ),

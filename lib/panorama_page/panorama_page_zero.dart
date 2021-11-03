@@ -11,8 +11,6 @@ import 'package:ufoff/panorama_page/contents/location.dart';
 import 'package:ufoff/panorama_page/panorama_page_model.dart';
 import 'package:ufoff/quiz_view_page/quiz_list_page.dart';
 import 'package:ufoff/web_view_page/web_view_page.dart';
-import 'package:ufoff/youtube_list_page/youtube_list_page.dart';
-import 'package:ufoff/youtube_list_page/youtube_view_page.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -158,19 +156,6 @@ class PanoramaPageZero extends StatelessWidget {
                                             fullscreenDialog: true,
                                           ),
                                         );
-                                      } else if (sc == '1') {
-                                        title = '${document['title']}';
-                                        backURL = '${document['backURL']}';
-                                        model.endLoading();
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    YoutubeListPage(
-                                                        Colors.deepOrangeAccent,
-                                                        title,
-                                                        backURL,
-                                                        o)));
                                       } else if (sc == '2') {
                                         title = '${document['title']}';
                                         model.endLoading();
@@ -194,17 +179,31 @@ class PanoramaPageZero extends StatelessWidget {
                                                     title,
                                                     webURL)));
                                       } else if (sc == '4') {
-                                        title = '${document['title']}';
-                                        youtubeURL =
-                                            '${document['youtubeURL']}';
                                         model.endLoading();
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) => Youtube(
-                                                    Colors.deepOrangeAccent,
-                                                    title,
-                                                    youtubeURL)));
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return SimpleDialog(
+                                          title: Text(
+                                            'error',
+                                            style: TextStyle(
+                                                color: Colors.deepOrangeAccent),
+                                          ),
+                                          children: <Widget>[
+                                            SimpleDialogOption(
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                              child: Text(
+                                                'ただいまサポートしていない機能です。',
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
                                       } else if (sc == '5') {
                                         title = '${document['title']}';
                                         pdfURL = Uri.parse('${document['pdfURL']}');
@@ -253,7 +252,7 @@ class PanoramaPageZero extends StatelessWidget {
                                                     p,
                                                     g,
                                                     b)));
-                                      } else if (sc == '') {
+                                      } else {
                                         model.endLoading();
                                       }
                                     }
@@ -324,21 +323,6 @@ class PanoramaPageZero extends StatelessWidget {
                                                   fullscreenDialog: true,
                                                 ),
                                               );
-                                            } else if (sc == '1') {
-                                              title = '${document['title']}';
-                                              backURL =
-                                                  '${document['backURL']}';
-                                              model.endLoading();
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          YoutubeListPage(
-                                                              Color.fromRGBO(93,
-                                                                  255, 43, 1),
-                                                              title,
-                                                              backURL,
-                                                              g)));
                                             } else if (sc == '2') {
                                               title = '${document['title']}';
                                               model.endLoading();
@@ -364,19 +348,31 @@ class PanoramaPageZero extends StatelessWidget {
                                                           title,
                                                           webURL)));
                                             } else if (sc == '4') {
-                                              title = '${document['title']}';
-                                              youtubeURL =
-                                                  '${document['youtubeURL']}';
                                               model.endLoading();
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          Youtube(
-                                                              Color.fromRGBO(93,
-                                                                  255, 43, 1),
-                                                              title,
-                                                              youtubeURL)));
+                                                                                 showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return SimpleDialog(
+                                          title: Text(
+                                            'error',
+                                            style: TextStyle(
+                                                color: Colors.deepOrangeAccent),
+                                          ),
+                                          children: <Widget>[
+                                            SimpleDialogOption(
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                              child: Text(
+                                                'ただいまサポートしていない機能です。',
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
                                             } else if (sc == '5') {
                                               title = '${document['title']}';
                                               pdfURL = Uri.parse('${document['pdfURL']}');
@@ -413,7 +409,7 @@ class PanoramaPageZero extends StatelessWidget {
                                                                   255, 43, 1),
                                                               title,
                                                               g)));
-                                            } else if (sc == '') {
+                                            } else {
                                               model.endLoading();
                                             }
                                           }
@@ -478,24 +474,6 @@ class PanoramaPageZero extends StatelessWidget {
                                                   fullscreenDialog: true,
                                                 ),
                                               );
-                                            } else if (sc == '1') {
-                                              title = '${document['title']}';
-                                              backURL =
-                                                  '${document['backURL']}';
-                                              model.endLoading();
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          YoutubeListPage(
-                                                              Color.fromRGBO(
-                                                                  205,
-                                                                  43,
-                                                                  255,
-                                                                  1),
-                                                              title,
-                                                              backURL,
-                                                              p)));
                                             } else if (sc == '2') {
                                               title = '${document['title']}';
                                               model.endLoading();
@@ -524,23 +502,32 @@ class PanoramaPageZero extends StatelessWidget {
                                                           title,
                                                           webURL)));
                                             } else if (sc == '4') {
-                                              title = '${document['title']}';
-                                              youtubeURL =
-                                                  '${document['youtubeURL']}';
                                               model.endLoading();
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          Youtube(
-                                                              Color.fromRGBO(
-                                                                  205,
-                                                                  43,
-                                                                  255,
-                                                                  1),
-                                                              title,
-                                                              youtubeURL)));
-                                            } else if (sc == '5') {
+                                                                                  showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return SimpleDialog(
+                                          title: Text(
+                                            'error',
+                                            style: TextStyle(
+                                                color: Colors.deepOrangeAccent),
+                                          ),
+                                          children: <Widget>[
+                                            SimpleDialogOption(
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                              child: Text(
+                                                'ただいまサポートしていない機能です。',
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+				     }else if (sc == '5') {
                                               title = '${document['title']}';
                                               pdfURL = Uri.parse('${document['pdfURL']}');
                                               model.endLoading();
@@ -579,7 +566,7 @@ class PanoramaPageZero extends StatelessWidget {
                                                                   1),
                                                               title,
                                                               p)));
-                                            } else if (sc == '') {
+                                            } else {
                                               model.endLoading();
                                             }
                                           }
@@ -644,19 +631,6 @@ class PanoramaPageZero extends StatelessWidget {
                                             fullscreenDialog: true,
                                           ),
                                         );
-                                      } else if (sc == '1') {
-                                        title = '${document['title']}';
-                                        backURL = '${document['backURL']}';
-                                        model.endLoading();
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    YoutubeListPage(
-                                                        Colors.lightBlueAccent,
-                                                        title,
-                                                        backURL,
-                                                        b)));
                                       } else if (sc == '2') {
                                         title = '${document['title']}';
                                         model.endLoading();
@@ -680,17 +654,31 @@ class PanoramaPageZero extends StatelessWidget {
                                                     title,
                                                     webURL)));
                                       } else if (sc == '4') {
-                                        title = '${document['title']}';
-                                        youtubeURL =
-                                            '${document['youtubeURL']}';
                                         model.endLoading();
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) => Youtube(
-                                                    Colors.lightBlueAccent,
-                                                    title,
-                                                    youtubeURL)));
+                                                                            showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return SimpleDialog(
+                                          title: Text(
+                                            'error',
+                                            style: TextStyle(
+                                                color: Colors.deepOrangeAccent),
+                                          ),
+                                          children: <Widget>[
+                                            SimpleDialogOption(
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                              child: Text(
+                                                'ただいまサポートしていない機能です。',
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
                                       } else if (sc == '5') {
                                         title = '${document['title']}';
                                         pdfURL = Uri.parse('${document['pdfURL']}');
@@ -721,7 +709,7 @@ class PanoramaPageZero extends StatelessWidget {
                                                         Colors.lightBlueAccent,
                                                         title,
                                                         b)));
-                                      } else if (sc == '') {
+                                      } else {
                                         model.endLoading();
                                       }
                                     }

@@ -5,7 +5,6 @@ import 'package:ufoff/group_list_page/pdf_list_page.dart';
 import 'package:ufoff/panorama_page/contents/enddrawer.dart';
 import 'package:ufoff/panorama_page/contents/location.dart';
 import 'package:ufoff/panorama_page/panorama_page_zero.dart';
-import 'package:ufoff/youtube_list_page/youtube_list_page.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'ground_sky_page_model.dart';
@@ -92,7 +91,7 @@ class GroundSky extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            Padding(
+                            /*Padding(
                               padding: EdgeInsets.only(),
                               child: SizedBox(
                                 width: 40,
@@ -129,7 +128,7 @@ class GroundSky extends StatelessWidget {
                                   },
                                 ),
                               ),
-                            ),
+                            ),*/
                             Padding(
                               padding: EdgeInsets.only(),
                               child: Row(
@@ -174,7 +173,7 @@ class GroundSky extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Padding(
+                                  /*Padding(
                                     padding: EdgeInsets.only(),
                                     child: SizedBox(
                                       width: 40,
@@ -215,7 +214,7 @@ class GroundSky extends StatelessWidget {
 
                                       ),
                                     ),
-                                  ),
+                                  ),*/
                                 ],
                               ),
                             ),
