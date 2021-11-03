@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_youtube/flutter_youtube.dart';
 import 'package:ufoff/group_list_page/pdf_view_page.dart';
 
 class asanoRadio extends StatefulWidget {
@@ -27,7 +26,7 @@ class _RadioState extends State<asanoRadio> {
     super.initState();
   }
 
-  void playYoutubeVideoEdit() {
+ /* void playYoutubeVideoEdit() {
     FlutterYoutube.onVideoEnded.listen((onData) {
       //perform your action when video playing is done
     });
@@ -36,7 +35,7 @@ class _RadioState extends State<asanoRadio> {
       apiKey: "<API_KEY>",
       videoUrl: radio_url,
     );
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
